@@ -1,11 +1,11 @@
-Budget app
+# Budget app
 ***********
 clone directory
 
-Development
+## Development
 
+```
 #install node
-
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
@@ -13,10 +13,13 @@ sudo apt-get install -y nodejs
 cd ~/budget-app
 npm install
 npm start
-
+```
+## install Docker and Docker Compose
+```
 cd ~/budget-app
 sudo apt-get update
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 sudo apt-get install software-properties-common
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
@@ -29,3 +32,4 @@ ip a
 nano nginx.conf
 sudo docker build --rm -f Dockerfile -t server .
 sudo docker run -d -p 80:80 server
+```
