@@ -1,6 +1,10 @@
 # Budget app
 ***********
+```
 clone directory
+sudo apt-get update
+sudo apt-get install git-core
+```
 
 ## Development
 
