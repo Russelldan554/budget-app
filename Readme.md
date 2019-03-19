@@ -4,6 +4,7 @@
 clone directory
 sudo apt-get update
 sudo apt-get install git-core
+git clone <repo url>
 ```
 
 ## Development
