@@ -1,5 +1,8 @@
 # Budget app
 ***********
+This is all for Ubuntu 18.04 or 16.04 If you want to develop on anything else just look up how to install node on your
+operating system and just run the Create Project three lines ending with npm start. That will give you a local server at https://localhost:3000
+
 ```
 # clone directory
 sudo apt-get update
