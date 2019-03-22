@@ -11,18 +11,6 @@ sudo apt-get install git-core
 git clone <repo url>
 ```
 
-## Development
-
-```
-#install node
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-#create project
-cd ~/budget-app/budget-app
-npm install
-npm start
-```
 ## install Docker and Docker Compose
 ```
 #run install script for docker and docker compose
