@@ -14,14 +14,20 @@ services:
     networks:
       - default
 
+    restart:
+      - always
+
   db:
     image: mysql:latest
 
+    expose:
+      - 3306
+
     ports:
-      - "3306:3306"
+      - 3306:3306
 
     networks:
-     - default
+     - spring-network
 
     environment:
       - MYSQL_ROOT_PASSWORD=password
@@ -33,11 +39,18 @@ services:
     depends_on:
       - db
 
+    expose:
+      - 8080
+
     ports:
-      - "8080:8080"
+      - 8080:8080
 
     networks:
-     - default
+     - spring-network
+
+    restart:
+      - always
+
 networks:
-  default:
-    external: true
+    spring-network:
+        driver: bridge
