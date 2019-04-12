@@ -1,0 +1,18 @@
+
+
+docker build -t moolah_backend .
+docker run -p 8080:8080 moolah
+
+
+docker run -t --name moolah --link docker-mysql:mysql -p 8080:8080 moolah
+
+
+server:
+  image: server
+
+  volumes:
+    - ~/budget-app/build/React:/usr/share/nginx/html
+    - ~/budget-app/nginx/:/etc/nginx/conf.d
+
+  ports:
+    - "80:80"

@@ -1,18 +1,43 @@
 version: '3'
 
-
 services:
+  server:
+    build: './nginx'
 
- server:
-   image: server
+    volumes:
+      - ~/budget-app/build/React:/usr/share/nginx/html
+      - ~/budget-app/nginx/:/etc/nginx/conf.d
 
-   volumes:
-     - ~/budget-app/build:/usr/share/nginx/html
-     - ~/budget-app/nginx/:/etc/nginx/conf.d
+    ports:
+      - "80:80"
 
-   ports:
+    networks:
+      - default
 
-     - "80:80"    
+  db:
+    image: mysql:latest
 
+    ports:
+      - "3306:3306"
 
+    networks:
+     - default
 
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=moolah
+
+  spring:
+    build: './Java'
+
+    depends_on:
+      - db
+
+    ports:
+      - "8080:8080"
+
+    networks:
+     - default
+networks:
+  default:
+    external: true
