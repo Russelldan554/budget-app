@@ -14,8 +14,7 @@ services:
     networks:
       - default
 
-    restart:
-      - always
+    restart: always
 
   db:
     image: mysql:latest
@@ -48,8 +47,7 @@ services:
     networks:
      - spring-network
 
-    restart:
-      - always
+    restart: always
 
 networks:
     spring-network:
